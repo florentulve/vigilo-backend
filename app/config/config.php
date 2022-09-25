@@ -30,3 +30,7 @@ $config['MYSQL_PASSWORD'] = getenv('MYSQL_ADDON_PASSWORD');
 
 // Set the database name
 $config['MYSQL_DATABASE'] = getenv('MYSQL_ADDON_DB');
+
+
+$config['DATA_PATH'] = getenv('APP_HOME') . '/data/';
+
