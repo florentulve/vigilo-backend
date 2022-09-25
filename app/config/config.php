@@ -32,5 +32,5 @@ $config['MYSQL_PASSWORD'] = getenv('MYSQL_ADDON_PASSWORD');
 $config['MYSQL_DATABASE'] = getenv('MYSQL_ADDON_DB');
 
 
-$config['DATA_PATH'] = 'data/';
+$config['DATA_PATH'] = '../data/';
 
