@@ -1,2 +1,2 @@
-php_value max_input_vars 50000
+#php_value max_input_vars 50000
 

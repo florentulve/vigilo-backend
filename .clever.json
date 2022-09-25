@@ -1,0 +1,11 @@
+{
+  "apps": [
+    {
+      "app_id": "app_bb1f2714-1028-464c-809f-df653bf268b5",
+      "org_id": "user_0d62a156-1c93-4cac-b4d7-79ef7c1b0d83",
+      "deploy_url": "https://push-n2-par-clevercloud-customers.services.clever-cloud.com/app_bb1f2714-1028-464c-809f-df653bf268b5.git",
+      "name": "vigilo-lorient",
+      "alias": "vigilo-lorient"
+    }
+  ]
+}

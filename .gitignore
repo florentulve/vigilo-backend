@@ -9,7 +9,7 @@ app/places/*.json
 app/datas.php
 app/caches/*.jpg
 app/install.php
-app/config/config.php
+#app/config/config.php
 
 # Backup
 backup/
