@@ -24,6 +24,7 @@ clever create --type php ${app_name}
 clever scale --min-instances 1 --max-instances 1 --min-flavor "${php_plan_min}" --max-flavor "${php_plan_max}"
 clever config set force-https true
 clever config set cancel-on-push true
+clever config set zero-downtime false
 
 #Addons
 clever addon create cellar-addon --plan "S" vigilo-cellar --link ${app_name}
