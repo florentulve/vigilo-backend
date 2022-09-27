@@ -2,6 +2,9 @@
 
 cd "${APP_HOME}" || exit 1
 
+
+mkdir -p ./data/{images,caches,maps}
+
 if [ -f "./clevercloud/rclone" ]; then
     exit;
 fi

@@ -14,12 +14,12 @@ image_backup=./clevercloud/images-"${DOW}".tar.gz
 caches_backup=./clevercloud/caches-"${DOW}".tar.gz
 maps_backup=./clevercloud/maps-"${DOW}".tar.gz
 
-tar -zcvf "${image_backup}" ./data/images
-tar -zcvf "${caches_backup}" ./data/caches
-tar -zcvf "${maps_backup}" ./data/maps
+tar -zcvf "${image_backup}" ./app/images
+tar -zcvf "${caches_backup}" ./app/caches
+tar -zcvf "${maps_backup}" ./app/maps
 
 ./clevercloud/rclone copy "${image_backup}" mys3:"${VG_BACKUP_BUCKET_NAME}" --progress --s3-acl=private --header "Content-Encoding: gzip"
-./clevercloud/rclone copy "${caches_backup}" mys3:"${VG_BACKUP_BUCKET_NAME}" --progress --s3-acl=pprivate --header "Content-Encoding: gzip"
+./clevercloud/rclone copy "${caches_backup}" mys3:"${VG_BACKUP_BUCKET_NAME}" --progress --s3-acl=private --header "Content-Encoding: gzip"
 ./clevercloud/rclone copy "${maps_backup}" mys3:"${VG_BACKUP_BUCKET_NAME}" --progress --s3-acl=private --header "Content-Encoding: gzip"
 
 rm "${image_backup}"
