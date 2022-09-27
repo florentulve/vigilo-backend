@@ -34,7 +34,7 @@ if (!isset($config['DATA_PATH'])) {
     $config['DATA_PATH'] = '';
 }
 
-if (!$db = mysqli_connect($config['MYSQL_HOST'], $config['MYSQL_USER'], $config['MYSQL_PASSWORD'], $config['MYSQL_DATABASE'])) {
+if (!$db = mysqli_connect($config['MYSQL_HOST'], $config['MYSQL_USER'], $config['MYSQL_PASSWORD'], $config['MYSQL_DATABASE'], $config['MYSQL_PORT'])) {
     error_log("[FATAL] Connection à la base impossible");
     exit();
 }

@@ -31,6 +31,8 @@ $config['MYSQL_PASSWORD'] = getenv('MYSQL_ADDON_PASSWORD');
 // Set the database name
 $config['MYSQL_DATABASE'] = getenv('MYSQL_ADDON_DB');
 
+// Set the database port
+$config['MYSQL_PORT'] = getenv('MYSQL_ADDON_PORT');
 
 $config['DATA_PATH'] = '../data/';
 

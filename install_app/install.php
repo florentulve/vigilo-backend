@@ -29,7 +29,7 @@ if(isset($_POST['password']) && !empty($_POST['password'])) {
                                       '')");
    deleteInstallFile();
    header('Location: admin/index.php');
- } 
+ }
 }
 ?>
 <!doctype html>
@@ -52,7 +52,7 @@ if(isset($_POST['password']) && !empty($_POST['password'])) {
       body {
         height: 100%;
       }
-      
+
       body {
         display: -ms-flexbox;
         display: -webkit-box;
@@ -67,7 +67,7 @@ if(isset($_POST['password']) && !empty($_POST['password'])) {
         padding-bottom: 40px;
         background-color: #f5f5f5;
       }
-      
+
       .form-signin {
         width: 100%;
         max-width: 330px;
@@ -106,7 +106,8 @@ if(isset($_POST['password']) && !empty($_POST['password'])) {
 if(!$db = mysqli_connect($config['MYSQL_HOST'],
                      $config['MYSQL_USER'],
                      $config['MYSQL_PASSWORD'],
-                     $config['MYSQL_DATABASE'])) {
+                     $config['MYSQL_DATABASE'],
+                     $config['MYSQL_PORT'])) {
 
 ?>
   <div class="alert alert-danger" role="alert">Erreur de connexion à la base de données MySQL : <br />
@@ -127,7 +128,7 @@ else {
 </div>
 
 <?php
-  } 
+  }
   else {
 ?>
 
@@ -154,8 +155,8 @@ else {
       <button class="btn btn-lg btn-primary btn-block" type="submit">Créer le compte</button>
       <p class="mt-5 mb-3 text-muted">&copy; 2018-2019</p>
     </form>
-<?php 
-  } 
+<?php
+  }
 }
 ?>
   </body>
