@@ -18,9 +18,9 @@ tar -zcvf "${image_backup}" ./data/images
 tar -zcvf "${caches_backup}" ./data/caches
 tar -zcvf "${maps_backup}" ./data/maps
 
-./clevercloud/rclone copy "${image_backup}" mys3:"${VG_BACKUP_BUCKET_NAME}" --progress --s3-acl=public-read --header "Content-Encoding: gzip"
-./clevercloud/rclone copy "${caches_backup}" mys3:"${VG_BACKUP_BUCKET_NAME}" --progress --s3-acl=public-read --header "Content-Encoding: gzip"
-./clevercloud/rclone copy "${maps_backup}" mys3:"${VG_BACKUP_BUCKET_NAME}" --progress --s3-acl=public-read --header "Content-Encoding: gzip"
+./clevercloud/rclone copy "${image_backup}" mys3:"${VG_BACKUP_BUCKET_NAME}" --progress --s3-acl=private --header "Content-Encoding: gzip"
+./clevercloud/rclone copy "${caches_backup}" mys3:"${VG_BACKUP_BUCKET_NAME}" --progress --s3-acl=pprivate --header "Content-Encoding: gzip"
+./clevercloud/rclone copy "${maps_backup}" mys3:"${VG_BACKUP_BUCKET_NAME}" --progress --s3-acl=private --header "Content-Encoding: gzip"
 
 rm "${image_backup}"
 rm "${caches_backup}"
