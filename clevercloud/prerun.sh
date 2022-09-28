@@ -5,9 +5,9 @@ cd "${APP_HOME}" || exit 1
 # fs bucket init
 
 mkdir -p ./app/data/{images,caches,maps}
-cp ./app/images/* ./app/data/images
-cp ./app/caches/* ./app/data/caches
-cp ./app/maps/* ./app/data/maps
+cp -ra ./app/images/. ./app/data/images
+cp -ra ./app/caches/. ./app/data/caches
+cp -ra ./app/maps/. ./app/data/maps
 
 # rclone init
 
