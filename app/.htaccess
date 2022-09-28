@@ -1,2 +1,5 @@
-#php_value max_input_vars 50000
+# php_value max_input_vars 50000
 
+RewriteRule ^images/(.*)$ /data/images/$1 [NC,L]
+RewriteRule ^caches/(.*)$ /data/caches/$1 [NC,L]
+RewriteRule ^maps/(.*)$ /data//maps/$1 [NC,L]

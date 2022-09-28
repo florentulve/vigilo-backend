@@ -17,7 +17,7 @@ clever unlink ${app_name}
 clever delete ${app_name}
 clever addon delete vigilo-cellar
 clever addon delete vigilo-db
-#clever addon delete vigilo-fs
+clever addon delete vigilo-fs
 
 echo -e "Creating app and addons..."
 clever create --type php ${app_name}
@@ -29,13 +29,13 @@ clever config set zero-downtime false
 #Addons
 clever addon create cellar-addon --plan "S" vigilo-cellar --link ${app_name}
 clever addon create mysql-addon --plan "${mysql_plan}"  vigilo-db --link ${app_name}
-#clever addon create fs-bucket  --plan "s" vigilo-fs  --link ${app_name}
+clever addon create fs-bucket  --plan "s" vigilo-fs  --link ${app_name}
 
 # shellcheck source=/dev/null
 . <(clever env --add-export)
 
 echo -e "Configuring app..."
-#clever env set CC_FS_BUCKET "/data/:${BUCKET_HOST}"
+clever env set CC_FS_BUCKET "/app/data/:${BUCKET_HOST}"
 clever env set CC_PRE_RUN_HOOK "./clevercloud/prerun.sh"
 clever env set CC_WEBROOT "/app"
 clever domain add "${domain}"
@@ -43,8 +43,7 @@ clever domain add "${domain}"
 # Bucket for backups
 bucket_name="${org_name}-${app_name}-backup"
 clever env set VG_BACKUP_BUCKET_NAME "${bucket_name}"
-# TODO: Automate bucket creation
-#s3cmd mb s3://
+s3cmd -v --access_key=${CELLAR_ADDON_KEY_ID} --secret_key=${CELLAR_ADDON_KEY_SECRET} --default-mime-type="binary/octet-stream" --host="${CELLAR_ADDON_HOST}" --host-bucket="%(bucket)s.${CELLAR_ADDON_HOST}" mb s3://"${bucket_name}"
 
 echo -e "Init database (this can take time)..."
 
