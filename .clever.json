@@ -1,0 +1,11 @@
+{
+  "apps": [
+    {
+      "app_id": "app_3a651ed2-9ec8-4d4d-9274-870f1eee5c63",
+      "org_id": "user_0d62a156-1c93-4cac-b4d7-79ef7c1b0d83",
+      "deploy_url": "https://push-n2-par-clevercloud-customers.services.clever-cloud.com/app_3a651ed2-9ec8-4d4d-9274-870f1eee5c63.git",
+      "name": "vigilo",
+      "alias": "vigilo"
+    }
+  ]
+}
