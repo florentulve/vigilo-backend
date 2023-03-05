@@ -1,4 +1,4 @@
-FROM php:7.2-apache
+FROM php:7.4.21-apache
 
 MAINTAINER Vigilo Team <velocite34@gmail.com>
 
